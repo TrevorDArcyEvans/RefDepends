@@ -6,7 +6,7 @@ public static class Program
 {
   public static void Main(string[] args)
   {
-    var targetFolder = args[0];
+    var targetFolder = args.Length == 1 ? args[0] : Environment.CurrentDirectory;
 
     // [dll] --> [where used]
     var refDepsMap = new Dictionary<string, HashSet<string>>();
