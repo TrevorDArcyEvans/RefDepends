@@ -14,18 +14,25 @@ public static class Program
     var assyPaths = Directory.EnumerateFiles(targetFolder, "*.dll", SearchOption.TopDirectoryOnly).Where(IsAssembly);
     foreach (var assyPath in assyPaths)
     {
-      var assy = Assembly.LoadFile(assyPath);
-      var assyName = assy.GetName();
-      var refs = assy.GetReferencedAssemblies();
-      foreach (var thisRef in refs)
+      try
       {
-        var thisRefName = thisRef.ToString();
-        if (!refDepsMap.ContainsKey(thisRefName))
+        var assy = Assembly.LoadFile(assyPath);
+        var assyName = assy.GetName();
+        var refs = assy.GetReferencedAssemblies();
+        foreach (var thisRef in refs)
         {
-          refDepsMap[thisRefName] = new();
-        }
+          var thisRefName = thisRef.ToString();
+          if (!refDepsMap.ContainsKey(thisRefName))
+          {
+            refDepsMap[thisRefName] = new();
+          }
 
-        refDepsMap[thisRefName].Add(assyName.ToString());
+          refDepsMap[thisRefName].Add(assyName.ToString());
+        }
+      }
+      catch
+      {
+        // can't load some .NET assys
       }
     }
 
