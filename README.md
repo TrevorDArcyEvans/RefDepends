@@ -1,5 +1,7 @@
 # 'Where Used' - who is using what in .NET Core
 
+![Pretzel_knot](./Pretzel_knot.png)
+
 Just recently, we published our service project and tried to run it:
 
 ```bash
@@ -74,3 +76,6 @@ System.Runtime, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3
 
 ## Further work
 * generate a dot file so we can graphically view the where used information
+
+## Acknowledgements
+* tangled image from [Pretzel_knot](https://en.wikipedia.org/wiki/Tangle_%28mathematics%29)
