@@ -1,4 +1,6 @@
-﻿namespace RefDepends;
+﻿using System.Text;
+
+namespace RefDepends;
 
 using System.Reflection;
 
@@ -54,6 +56,8 @@ public static class Program
         }
       }
     }
+
+    var dot = ToDot(assGrps);
   }
 
   private static bool IsAssembly(string assyPath)
@@ -68,5 +72,32 @@ public static class Program
     }
 
     return true;
+  }
+
+  private static string ToDot(IEnumerable<IGrouping<string?, KeyValuePair<AssemblyName, IEnumerable<AssemblyName>>>> assGrps)
+  {
+    var sb = new StringBuilder();
+
+    sb.AppendLine("digraph G");
+    sb.AppendLine("{");
+
+    foreach (var assGrp in assGrps)
+    {
+      var unVerAss = assGrp.Key;
+      foreach (var kvp in assGrp)
+      {
+        var verAss = kvp.Key.FullName;
+        sb.AppendLine($"  {kvp.Key.FullName} -> {verAss}");
+        foreach (var assyName in kvp.Value)
+        {
+          var depAss = assyName.FullName;
+          sb.AppendLine($"    {depAss}->{verAss};");
+        }
+      }
+    }
+
+    sb.AppendLine("}");
+
+    return sb.ToString();
   }
 }
