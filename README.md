@@ -134,112 +134,47 @@ digraph G
  {
     node [shape=box]
     "netstandard";
-    "netstandard
- Version=2.0.0.0
- Culture=neutral
- PublicKeyToken=cc7b13ffcd2ddd51";
-    "CommandLine
- Version=2.9.1.0
- Culture=neutral
- PublicKeyToken=5a870481e358d379";
+    "netstandard\n Version=2.0.0.0\n Culture=neutral\n PublicKeyToken=cc7b13ffcd2ddd51";
+    "CommandLine\n Version=2.9.1.0\n Culture=neutral\n PublicKeyToken=5a870481e358d379";
     "System.Runtime";
-    "System.Runtime
- Version=6.0.0.0
- Culture=neutral
- PublicKeyToken=b03f5f7f11d50a3a";
-    "RefDepends
- Version=1.0.0.0
- Culture=neutral
- PublicKeyToken=null";
+    "System.Runtime\n Version=6.0.0.0\n Culture=neutral\n PublicKeyToken=b03f5f7f11d50a3a";
+    "RefDepends\n Version=1.0.0.0\n Culture=neutral\n PublicKeyToken=null";
     "CommandLine";
     "System.Linq";
-    "System.Linq
- Version=6.0.0.0
- Culture=neutral
- PublicKeyToken=b03f5f7f11d50a3a";
+    "System.Linq\n Version=6.0.0.0\n Culture=neutral\n PublicKeyToken=b03f5f7f11d50a3a";
     "System.Collections";
-    "System.Collections
- Version=6.0.0.0
- Culture=neutral
- PublicKeyToken=b03f5f7f11d50a3a";
+    "System.Collections\n Version=6.0.0.0\n Culture=neutral\n PublicKeyToken=b03f5f7f11d50a3a";
     "System.Console";
-    "System.Console
- Version=6.0.0.0
- Culture=neutral
- PublicKeyToken=b03f5f7f11d50a3a";
+    "System.Console\n Version=6.0.0.0\n Culture=neutral\n PublicKeyToken=b03f5f7f11d50a3a";
  }
 
-"netstandard
-Version=2.0.0.0
-Culture=neutral
-PublicKeyToken=cc7b13ffcd2ddd51" -> "netstandard";
-"CommandLine
-Version=2.9.1.0
-Culture=neutral
-PublicKeyToken=5a870481e358d379" -> "netstandard
-Version=2.0.0.0
-Culture=neutral
-PublicKeyToken=cc7b13ffcd2ddd51";
-"System.Runtime
-Version=6.0.0.0
-Culture=neutral
-PublicKeyToken=b03f5f7f11d50a3a" -> "System.Runtime";
-"RefDepends
-Version=1.0.0.0
-Culture=neutral
-PublicKeyToken=null" -> "System.Runtime
-Version=6.0.0.0
-Culture=neutral
-PublicKeyToken=b03f5f7f11d50a3a";
-"CommandLine
-Version=2.9.1.0
-Culture=neutral
-PublicKeyToken=5a870481e358d379" -> "CommandLine";
-"RefDepends
-Version=1.0.0.0
-Culture=neutral
-PublicKeyToken=null" -> "CommandLine
-Version=2.9.1.0
-Culture=neutral
-PublicKeyToken=5a870481e358d379";
-"System.Linq
-Version=6.0.0.0
-Culture=neutral
-PublicKeyToken=b03f5f7f11d50a3a" -> "System.Linq";
-"RefDepends
-Version=1.0.0.0
-Culture=neutral
-PublicKeyToken=null" -> "System.Linq
-Version=6.0.0.0
-Culture=neutral
-PublicKeyToken=b03f5f7f11d50a3a";
-"System.Collections
-Version=6.0.0.0
-Culture=neutral
-PublicKeyToken=b03f5f7f11d50a3a" -> "System.Collections";
-"RefDepends
-Version=1.0.0.0
-Culture=neutral
-PublicKeyToken=null" -> "System.Collections
-Version=6.0.0.0
-Culture=neutral
-PublicKeyToken=b03f5f7f11d50a3a";
-"System.Console
-Version=6.0.0.0
-Culture=neutral
-PublicKeyToken=b03f5f7f11d50a3a" -> "System.Console";
-"RefDepends
-Version=1.0.0.0
-Culture=neutral
-PublicKeyToken=null" -> "System.Console
-Version=6.0.0.0
-Culture=neutral
-PublicKeyToken=b03f5f7f11d50a3a";
+  "netstandard\n Version=2.0.0.0\n Culture=neutral\n PublicKeyToken=cc7b13ffcd2ddd51" -> "netstandard";
+    "CommandLine\n Version=2.9.1.0\n Culture=neutral\n PublicKeyToken=5a870481e358d379" -> "netstandard\n Version=2.0.0.0\n Culture=neutral\n PublicKeyToken=cc7b13ffcd2ddd51";
+  "System.Runtime\n Version=6.0.0.0\n Culture=neutral\n PublicKeyToken=b03f5f7f11d50a3a" -> "System.Runtime";
+    "RefDepends\n Version=1.0.0.0\n Culture=neutral\n PublicKeyToken=null" -> "System.Runtime\n Version=6.0.0.0\n Culture=neutral\n PublicKeyToken=b03f5f7f11d50a3a";
+  "CommandLine\n Version=2.9.1.0\n Culture=neutral\n PublicKeyToken=5a870481e358d379" -> "CommandLine";
+    "RefDepends\n Version=1.0.0.0\n Culture=neutral\n PublicKeyToken=null" -> "CommandLine\n Version=2.9.1.0\n Culture=neutral\n PublicKeyToken=5a870481e358d379";
+  "System.Linq\n Version=6.0.0.0\n Culture=neutral\n PublicKeyToken=b03f5f7f11d50a3a" -> "System.Linq";
+    "RefDepends\n Version=1.0.0.0\n Culture=neutral\n PublicKeyToken=null" -> "System.Linq\n Version=6.0.0.0\n Culture=neutral\n PublicKeyToken=b03f5f7f11d50a3a";
+  "System.Collections\n Version=6.0.0.0\n Culture=neutral\n PublicKeyToken=b03f5f7f11d50a3a" -> "System.Collections";
+    "RefDepends\n Version=1.0.0.0\n Culture=neutral\n PublicKeyToken=null" -> "System.Collections\n Version=6.0.0.0\n Culture=neutral\n PublicKeyToken=b03f5f7f11d50a3a";
+  "System.Console\n Version=6.0.0.0\n Culture=neutral\n PublicKeyToken=b03f5f7f11d50a3a" -> "System.Console";
+    "RefDepends\n Version=1.0.0.0\n Culture=neutral\n PublicKeyToken=null" -> "System.Console\n Version=6.0.0.0\n Culture=neutral\n PublicKeyToken=b03f5f7f11d50a3a";
 }
 ```
 </details>
 
-[GraphvizOnline](https://dreampuf.github.io/GraphvizOnline/#digraph%20G%0A%7B%0A%20rankdir%3D%22BT%22%3B%0A%20%7B%0A%20%20%20%20node%20%5Bshape%3Dbox%5D%0A%20%20%20%20%22netstandard%22%3B%0A%20%20%20%20%22netstandard%0A%20Version%3D2.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Dcc7b13ffcd2ddd51%22%3B%0A%20%20%20%20%22CommandLine%0A%20Version%3D2.9.1.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3D5a870481e358d379%22%3B%0A%20%20%20%20%22System.Runtime%22%3B%0A%20%20%20%20%22System.Runtime%0A%20Version%3D6.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Db03f5f7f11d50a3a%22%3B%0A%20%20%20%20%22RefDepends%0A%20Version%3D1.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Dnull%22%3B%0A%20%20%20%20%22CommandLine%22%3B%0A%20%20%20%20%22System.Linq%22%3B%0A%20%20%20%20%22System.Linq%0A%20Version%3D6.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Db03f5f7f11d50a3a%22%3B%0A%20%20%20%20%22System.Collections%22%3B%0A%20%20%20%20%22System.Collections%0A%20Version%3D6.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Db03f5f7f11d50a3a%22%3B%0A%20%20%20%20%22System.Console%22%3B%0A%20%20%20%20%22System.Console%0A%20Version%3D6.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Db03f5f7f11d50a3a%22%3B%0A%20%7D%0A%0A%20%20%22netstandard%0A%20Version%3D2.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Dcc7b13ffcd2ddd51%22%20-%3E%20%22netstandard%22%3B%0A%20%20%20%20%22CommandLine%0A%20Version%3D2.9.1.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3D5a870481e358d379%22%20-%3E%20%22netstandard%0A%20Version%3D2.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Dcc7b13ffcd2ddd51%22%3B%0A%20%20%22System.Runtime%0A%20Version%3D6.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Db03f5f7f11d50a3a%22%20-%3E%20%22System.Runtime%22%3B%0A%20%20%20%20%22RefDepends%0A%20Version%3D1.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Dnull%22%20-%3E%20%22System.Runtime%0A%20Version%3D6.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Db03f5f7f11d50a3a%22%3B%0A%20%20%22CommandLine%0A%20Version%3D2.9.1.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3D5a870481e358d379%22%20-%3E%20%22CommandLine%22%3B%0A%20%20%20%20%22RefDepends%0A%20Version%3D1.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Dnull%22%20-%3E%20%22CommandLine%0A%20Version%3D2.9.1.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3D5a870481e358d379%22%3B%0A%20%20%22System.Linq%0A%20Version%3D6.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Db03f5f7f11d50a3a%22%20-%3E%20%22System.Linq%22%3B%0A%20%20%20%20%22RefDepends%0A%20Version%3D1.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Dnull%22%20-%3E%20%22System.Linq%0A%20Version%3D6.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Db03f5f7f11d50a3a%22%3B%0A%20%20%22System.Collections%0A%20Version%3D6.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Db03f5f7f11d50a3a%22%20-%3E%20%22System.Collections%22%3B%0A%20%20%20%20%22RefDepends%0A%20Version%3D1.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Dnull%22%20-%3E%20%22System.Collections%0A%20Version%3D6.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Db03f5f7f11d50a3a%22%3B%0A%20%20%22System.Console%0A%20Version%3D6.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Db03f5f7f11d50a3a%22%20-%3E%20%22System.Console%22%3B%0A%20%20%20%20%22RefDepends%0A%20Version%3D1.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Dnull%22%20-%3E%20%22System.Console%0A%20Version%3D6.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Db03f5f7f11d50a3a%22%3B%0A%7D%0A)
+#### GraphViz
+
+```bash
+$ dot -Tpng output.dot -o output.png
+```
+
+#### Online visualisation
+
+[GraphvizOnline](https://dreampuf.github.io/GraphvizOnline/#digraph%20G%0A%7B%0A%20rankdir%3D%22BT%22%3B%0A%20%7B%0A%20%20%20%20node%20%5Bshape%3Dbox%5D%0A%20%20%20%20%22netstandard%22%3B%0A%20%20%20%20%22netstandard%5Cn%20Version%3D2.0.0.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3Dcc7b13ffcd2ddd51%22%3B%0A%20%20%20%20%22CommandLine%5Cn%20Version%3D2.9.1.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3D5a870481e358d379%22%3B%0A%20%20%20%20%22System.Runtime%22%3B%0A%20%20%20%20%22System.Runtime%5Cn%20Version%3D6.0.0.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3Db03f5f7f11d50a3a%22%3B%0A%20%20%20%20%22RefDepends%5Cn%20Version%3D1.0.0.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3Dnull%22%3B%0A%20%20%20%20%22CommandLine%22%3B%0A%20%20%20%20%22System.Linq%22%3B%0A%20%20%20%20%22System.Linq%5Cn%20Version%3D6.0.0.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3Db03f5f7f11d50a3a%22%3B%0A%20%20%20%20%22System.Collections%22%3B%0A%20%20%20%20%22System.Collections%5Cn%20Version%3D6.0.0.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3Db03f5f7f11d50a3a%22%3B%0A%20%20%20%20%22System.Console%22%3B%0A%20%20%20%20%22System.Console%5Cn%20Version%3D6.0.0.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3Db03f5f7f11d50a3a%22%3B%0A%20%7D%0A%0A%20%20%22netstandard%5Cn%20Version%3D2.0.0.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3Dcc7b13ffcd2ddd51%22%20-%3E%20%22netstandard%22%3B%0A%20%20%20%20%22CommandLine%5Cn%20Version%3D2.9.1.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3D5a870481e358d379%22%20-%3E%20%22netstandard%5Cn%20Version%3D2.0.0.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3Dcc7b13ffcd2ddd51%22%3B%0A%20%20%22System.Runtime%5Cn%20Version%3D6.0.0.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3Db03f5f7f11d50a3a%22%20-%3E%20%22System.Runtime%22%3B%0A%20%20%20%20%22RefDepends%5Cn%20Version%3D1.0.0.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3Dnull%22%20-%3E%20%22System.Runtime%5Cn%20Version%3D6.0.0.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3Db03f5f7f11d50a3a%22%3B%0A%20%20%22CommandLine%5Cn%20Version%3D2.9.1.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3D5a870481e358d379%22%20-%3E%20%22CommandLine%22%3B%0A%20%20%20%20%22RefDepends%5Cn%20Version%3D1.0.0.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3Dnull%22%20-%3E%20%22CommandLine%5Cn%20Version%3D2.9.1.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3D5a870481e358d379%22%3B%0A%20%20%22System.Linq%5Cn%20Version%3D6.0.0.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3Db03f5f7f11d50a3a%22%20-%3E%20%22System.Linq%22%3B%0A%20%20%20%20%22RefDepends%5Cn%20Version%3D1.0.0.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3Dnull%22%20-%3E%20%22System.Linq%5Cn%20Version%3D6.0.0.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3Db03f5f7f11d50a3a%22%3B%0A%20%20%22System.Collections%5Cn%20Version%3D6.0.0.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3Db03f5f7f11d50a3a%22%20-%3E%20%22System.Collections%22%3B%0A%20%20%20%20%22RefDepends%5Cn%20Version%3D1.0.0.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3Dnull%22%20-%3E%20%22System.Collections%5Cn%20Version%3D6.0.0.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3Db03f5f7f11d50a3a%22%3B%0A%20%20%22System.Console%5Cn%20Version%3D6.0.0.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3Db03f5f7f11d50a3a%22%20-%3E%20%22System.Console%22%3B%0A%20%20%20%20%22RefDepends%5Cn%20Version%3D1.0.0.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3Dnull%22%20-%3E%20%22System.Console%5Cn%20Version%3D6.0.0.0%5Cn%20Culture%3Dneutral%5Cn%20PublicKeyToken%3Db03f5f7f11d50a3a%22%3B%0A%7D%0A)
+
+[WebGraphviz is Graphviz in the Browser](http://www.webgraphviz.com/)
 
 ## Further work
 * ~~generate a dot file so we can graphically view the where used information~~

@@ -140,5 +140,5 @@ public static class Program
     }
   }
 
-  private static string GetNormalisedName(this AssemblyName assName) => assName.FullName.Replace(",", Environment.NewLine);
+  private static string GetNormalisedName(this AssemblyName assName) => assName.FullName.Replace(",", "\\n");
 }
