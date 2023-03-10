@@ -9,6 +9,7 @@ public static class Program
     var targetFolder = args.Length == 1 ? args[0] : Environment.CurrentDirectory;
 
     // [dll] --> [where used]
+    // NOTE:  have to use strings because AssemblyName equality is object equality
     var refDepsMap = new Dictionary<string, HashSet<string>>();
 
     var assyPaths = Directory.EnumerateFiles(targetFolder, "*.dll", SearchOption.TopDirectoryOnly).Where(IsAssembly);
@@ -36,12 +37,21 @@ public static class Program
       }
     }
 
-    foreach (var kvp in refDepsMap.OrderBy(x => x.Key))
+    // reconstitute AssemblyNames
+    var assyNameRefDependsMap = refDepsMap.ToDictionary(
+      kvp => new AssemblyName(kvp.Key),
+      kvp => kvp.Value.Select(val => new AssemblyName(val)));
+    var assGrps = assyNameRefDependsMap.GroupBy(x => x.Key.Name);
+    foreach (var assGrp in assGrps)
     {
-      Console.WriteLine(kvp.Key);
-      foreach (var val in kvp.Value)
+      Console.WriteLine(assGrp.Key);
+      foreach (var kvp in assGrp)
       {
-        Console.WriteLine($"  {val}");
+        Console.WriteLine($"  {kvp.Key.FullName}");
+        foreach (var assyName in kvp.Value)
+        {
+          Console.WriteLine($"    {assyName.FullName}");
+        }
       }
     }
   }
