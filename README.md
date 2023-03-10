@@ -63,19 +63,186 @@ $ cd RefDepends
 $ dotnet restore
 $ dotnet build
 $ cd /bin/Debug/net6.0
-$ ./RefDepends.exe
-System.Collections, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-  RefDepends, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-System.Console, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-  RefDepends, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-System.Linq, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-  RefDepends, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-System.Runtime, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-  RefDepends, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+$ ./RefDepends.exe -d output.dot
+netstandard
+  netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+    CommandLine, Version=2.9.1.0, Culture=neutral, PublicKeyToken=5a870481e358d379
+System.Runtime
+  System.Runtime, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+    RefDepends, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+CommandLine
+  CommandLine, Version=2.9.1.0, Culture=neutral, PublicKeyToken=5a870481e358d379
+    RefDepends, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+System.Linq
+  System.Linq, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+    RefDepends, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+System.Collections
+  System.Collections, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+    RefDepends, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+System.Console
+  System.Console, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+    RefDepends, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 ```
 
+## Usage
+```bash
+$ ./RefDepends --help
+RefDepends 1.0.0
+Copyright (C) 2023 RefDepends
+
+  -d, --dot       Path to output output dot file
+
+  --help          Display this help screen.
+
+  --version       Display version information.
+
+  value pos. 0    Path to directory to analyse
+```
+
+### Sample output
+```text
+netstandard
+  netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+    CommandLine, Version=2.9.1.0, Culture=neutral, PublicKeyToken=5a870481e358d379
+System.Runtime
+  System.Runtime, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+    RefDepends, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+CommandLine
+  CommandLine, Version=2.9.1.0, Culture=neutral, PublicKeyToken=5a870481e358d379
+    RefDepends, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+System.Linq
+  System.Linq, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+    RefDepends, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+System.Collections
+  System.Collections, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+    RefDepends, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+System.Console
+  System.Console, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+    RefDepends, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+```
+
+### Dotgraph support
+![dotgraph](graphviz.png)
+
+<details>
+  <summary>output.dot</summary>
+
+```text
+digraph G
+{
+ rankdir="BT";
+ {
+    node [shape=box]
+    "netstandard";
+    "netstandard
+ Version=2.0.0.0
+ Culture=neutral
+ PublicKeyToken=cc7b13ffcd2ddd51";
+    "CommandLine
+ Version=2.9.1.0
+ Culture=neutral
+ PublicKeyToken=5a870481e358d379";
+    "System.Runtime";
+    "System.Runtime
+ Version=6.0.0.0
+ Culture=neutral
+ PublicKeyToken=b03f5f7f11d50a3a";
+    "RefDepends
+ Version=1.0.0.0
+ Culture=neutral
+ PublicKeyToken=null";
+    "CommandLine";
+    "System.Linq";
+    "System.Linq
+ Version=6.0.0.0
+ Culture=neutral
+ PublicKeyToken=b03f5f7f11d50a3a";
+    "System.Collections";
+    "System.Collections
+ Version=6.0.0.0
+ Culture=neutral
+ PublicKeyToken=b03f5f7f11d50a3a";
+    "System.Console";
+    "System.Console
+ Version=6.0.0.0
+ Culture=neutral
+ PublicKeyToken=b03f5f7f11d50a3a";
+ }
+
+"netstandard
+Version=2.0.0.0
+Culture=neutral
+PublicKeyToken=cc7b13ffcd2ddd51" -> "netstandard";
+"CommandLine
+Version=2.9.1.0
+Culture=neutral
+PublicKeyToken=5a870481e358d379" -> "netstandard
+Version=2.0.0.0
+Culture=neutral
+PublicKeyToken=cc7b13ffcd2ddd51";
+"System.Runtime
+Version=6.0.0.0
+Culture=neutral
+PublicKeyToken=b03f5f7f11d50a3a" -> "System.Runtime";
+"RefDepends
+Version=1.0.0.0
+Culture=neutral
+PublicKeyToken=null" -> "System.Runtime
+Version=6.0.0.0
+Culture=neutral
+PublicKeyToken=b03f5f7f11d50a3a";
+"CommandLine
+Version=2.9.1.0
+Culture=neutral
+PublicKeyToken=5a870481e358d379" -> "CommandLine";
+"RefDepends
+Version=1.0.0.0
+Culture=neutral
+PublicKeyToken=null" -> "CommandLine
+Version=2.9.1.0
+Culture=neutral
+PublicKeyToken=5a870481e358d379";
+"System.Linq
+Version=6.0.0.0
+Culture=neutral
+PublicKeyToken=b03f5f7f11d50a3a" -> "System.Linq";
+"RefDepends
+Version=1.0.0.0
+Culture=neutral
+PublicKeyToken=null" -> "System.Linq
+Version=6.0.0.0
+Culture=neutral
+PublicKeyToken=b03f5f7f11d50a3a";
+"System.Collections
+Version=6.0.0.0
+Culture=neutral
+PublicKeyToken=b03f5f7f11d50a3a" -> "System.Collections";
+"RefDepends
+Version=1.0.0.0
+Culture=neutral
+PublicKeyToken=null" -> "System.Collections
+Version=6.0.0.0
+Culture=neutral
+PublicKeyToken=b03f5f7f11d50a3a";
+"System.Console
+Version=6.0.0.0
+Culture=neutral
+PublicKeyToken=b03f5f7f11d50a3a" -> "System.Console";
+"RefDepends
+Version=1.0.0.0
+Culture=neutral
+PublicKeyToken=null" -> "System.Console
+Version=6.0.0.0
+Culture=neutral
+PublicKeyToken=b03f5f7f11d50a3a";
+}
+```
+</details>
+
+[GraphvizOnline](https://dreampuf.github.io/GraphvizOnline/#digraph%20G%0A%7B%0A%20rankdir%3D%22BT%22%3B%0A%20%7B%0A%20%20%20%20node%20%5Bshape%3Dbox%5D%0A%20%20%20%20%22netstandard%22%3B%0A%20%20%20%20%22netstandard%0A%20Version%3D2.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Dcc7b13ffcd2ddd51%22%3B%0A%20%20%20%20%22CommandLine%0A%20Version%3D2.9.1.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3D5a870481e358d379%22%3B%0A%20%20%20%20%22System.Runtime%22%3B%0A%20%20%20%20%22System.Runtime%0A%20Version%3D6.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Db03f5f7f11d50a3a%22%3B%0A%20%20%20%20%22RefDepends%0A%20Version%3D1.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Dnull%22%3B%0A%20%20%20%20%22CommandLine%22%3B%0A%20%20%20%20%22System.Linq%22%3B%0A%20%20%20%20%22System.Linq%0A%20Version%3D6.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Db03f5f7f11d50a3a%22%3B%0A%20%20%20%20%22System.Collections%22%3B%0A%20%20%20%20%22System.Collections%0A%20Version%3D6.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Db03f5f7f11d50a3a%22%3B%0A%20%20%20%20%22System.Console%22%3B%0A%20%20%20%20%22System.Console%0A%20Version%3D6.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Db03f5f7f11d50a3a%22%3B%0A%20%7D%0A%0A%20%20%22netstandard%0A%20Version%3D2.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Dcc7b13ffcd2ddd51%22%20-%3E%20%22netstandard%22%3B%0A%20%20%20%20%22CommandLine%0A%20Version%3D2.9.1.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3D5a870481e358d379%22%20-%3E%20%22netstandard%0A%20Version%3D2.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Dcc7b13ffcd2ddd51%22%3B%0A%20%20%22System.Runtime%0A%20Version%3D6.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Db03f5f7f11d50a3a%22%20-%3E%20%22System.Runtime%22%3B%0A%20%20%20%20%22RefDepends%0A%20Version%3D1.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Dnull%22%20-%3E%20%22System.Runtime%0A%20Version%3D6.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Db03f5f7f11d50a3a%22%3B%0A%20%20%22CommandLine%0A%20Version%3D2.9.1.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3D5a870481e358d379%22%20-%3E%20%22CommandLine%22%3B%0A%20%20%20%20%22RefDepends%0A%20Version%3D1.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Dnull%22%20-%3E%20%22CommandLine%0A%20Version%3D2.9.1.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3D5a870481e358d379%22%3B%0A%20%20%22System.Linq%0A%20Version%3D6.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Db03f5f7f11d50a3a%22%20-%3E%20%22System.Linq%22%3B%0A%20%20%20%20%22RefDepends%0A%20Version%3D1.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Dnull%22%20-%3E%20%22System.Linq%0A%20Version%3D6.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Db03f5f7f11d50a3a%22%3B%0A%20%20%22System.Collections%0A%20Version%3D6.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Db03f5f7f11d50a3a%22%20-%3E%20%22System.Collections%22%3B%0A%20%20%20%20%22RefDepends%0A%20Version%3D1.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Dnull%22%20-%3E%20%22System.Collections%0A%20Version%3D6.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Db03f5f7f11d50a3a%22%3B%0A%20%20%22System.Console%0A%20Version%3D6.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Db03f5f7f11d50a3a%22%20-%3E%20%22System.Console%22%3B%0A%20%20%20%20%22RefDepends%0A%20Version%3D1.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Dnull%22%20-%3E%20%22System.Console%0A%20Version%3D6.0.0.0%0A%20Culture%3Dneutral%0A%20PublicKeyToken%3Db03f5f7f11d50a3a%22%3B%0A%7D%0A)
+
 ## Further work
-* generate a dot file so we can graphically view the where used information
+* ~~generate a dot file so we can graphically view the where used information~~
 
 ## Acknowledgements
 * tangled image from [Pretzel_knot](https://en.wikipedia.org/wiki/Tangle_%28mathematics%29)
