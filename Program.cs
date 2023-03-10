@@ -21,13 +21,13 @@ public static class Program
         var refs = assy.GetReferencedAssemblies();
         foreach (var thisRef in refs)
         {
-          var thisRefName = thisRef.ToString();
+          var thisRefName = thisRef.FullName;
           if (!refDepsMap.ContainsKey(thisRefName))
           {
             refDepsMap[thisRefName] = new();
           }
 
-          refDepsMap[thisRefName].Add(assyName.ToString());
+          refDepsMap[thisRefName].Add(assyName.FullName);
         }
       }
       catch
